@@ -60,8 +60,6 @@ try:
     subprocess.check_call(app_params, timeout=369)   # timeout in seconds -> 6 minutes
 except subprocess.CalledProcessError as cpe:
     err_msg = EXE_FILE + " returned non-zero exit code " + str(cpe.returncode)
-    # if getattr(cpe, 'output'):  # only available when running command with check_output()/send_output
-    #     err_msg += '\noutput=' + str(cpe.output)
 except subprocess.TimeoutExpired as toe:
     err_msg = EXE_FILE + " execution timed out"
 except KeyboardInterrupt:
